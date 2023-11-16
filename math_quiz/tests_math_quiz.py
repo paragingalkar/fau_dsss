@@ -28,13 +28,7 @@ class TestMathGame(unittest.TestCase):
             ]
 
             for num1, num2, operator, expected_problem, expected_answer in test_cases:
-                equation =f"{num1} {operator} {num2}"
-                if operator == '+':
-                    ans = num1 + num2
-                elif operator == '-':
-                    ans = num1 - num2
-                else:
-                    ans = num1 * num2
+                equation, ans = do_math(num1, num2, operator)
                 self.assertTrue(equation == expected_problem and ans == expected_answer)
 
 
