@@ -32,13 +32,13 @@ def math_quiz():
     """
     Main function containing the code for the quiz
     """
-    s = 0
-    t_q = 3
+    score = 0
+    total_questions = 3
 
     print("Welcome to the Math Quiz Game!")
     print("You will be presented with math problems, and you need to provide the correct answers.")
 
-    for _ in range(t_q):
+    for _ in range(total_questions):
         n1 = get_number(1, 10); n2 = get_number(1, 55); o = select_operator()
 
         PROBLEM, ANSWER = do_math(n1, n2, o)
@@ -55,11 +55,11 @@ def math_quiz():
 
         if useranswer == ANSWER:
             print("Correct! You earned a point.")
-            s += 1
+            score += 1
         else:
             print(f"Wrong answer. The correct answer is {ANSWER}.")
 
-    print(f"\nGame over! Your score is: {s}/{t_q}")
+    print(f"\nGame over! Your score is: {score}/{total_questions}")
 
 if __name__ == "__main__":
     """
